@@ -1,0 +1,52 @@
+{
+  "name": "lgtv-cli",
+  "version": "0.0.0",
+  "author": "Jack Fletcher @kauhat",
+  "private": true,
+  "bin": {
+    "lgtv-cli": "./bin/lgtv"
+  },
+  "type": "module",
+  "bugs": "https://github.com/kauhat/lgtv-cli/issues",
+  "dependencies": {
+    "@oclif/core": "^1",
+    "@oclif/plugin-help": "^3.2.10",
+    "lgtv2": "^1.6.3"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1",
+    "eslint": "^7.32.0",
+    "eslint-config-oclif": "^3.1.2",
+    "globby": "^10"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "files": [
+    "/bin",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json",
+    "/src"
+  ],
+  "homepage": "https://github.com/kauhat/lgtv-cli",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "src/index.js",
+  "oclif": {
+    "commands": "./src/commands",
+    "bin": "lgtv-cli",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "repository": "kauhat/lgtv-cli",
+  "scripts": {
+    "postpack": "rm -f oclif.manifest.json",
+    "posttest": "eslint .",
+    "prepack": "oclif-dev readme && oclif-dev manifest && oclif-dev readme",
+    "test": "echo NO TESTS",
+    "version": "oclif-dev readme && git add README.md"
+  }
+}
